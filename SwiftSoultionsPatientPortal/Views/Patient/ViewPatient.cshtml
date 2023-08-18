@@ -1,0 +1,44 @@
+﻿@model Patient
+
+<h3>@Model.First_Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Age</th>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>Medication</th>
+        <th>Doseage</th>
+        <th>Doctor Seen</th>
+        <th>Doctor Notes</th>
+        <th>Last Visit Date</th>
+    </tr>
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.Age</td>
+        <td>@Model.First_Name</td>
+        <td>@Model.Last_Name</td>
+        <td>@Model.Address</td>
+        <td>@Model.Medication</td>
+        <td>@Model.Doseage</td>
+        <td>@Model.Doctor_Seen</td>
+        <td>@Model.Doctor_Notes</td>
+        <td>@Model.Last_Visit_Date</td>
+        
+        
+        
+    </tr>
+</table>
+<div style="display: block">
+    <a href="/Product/UpdatePatient/@Model.ID">Update this Patient/a>
+</div>
+<div style="display: block">
+
+    @using (Html.BeginForm("DeletePatient", "Patient", "Post"))
+    {
+        <input type="hidden" asp-for="ID" value="@Model.ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this patient" />
+    }
+</div>

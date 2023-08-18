@@ -1,0 +1,19 @@
+﻿@model Patient
+
+<h2>Update @Model.First_Name @Model.Last_Name</h2>
+
+@using (Html.BeginForm("UpdateProductToDatabase", "Patient", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="@Model.ID" />
+
+    <label asp-for="First_Name" class="control-label">First_Name</label>
+    <input type="text" First_Name="First_Name" class="form-control" value="@Model.First_Name" />
+
+    <label asp-for="Last_Name" class="control-label">Last_Name</label>
+    <input type="text" First_Name="First_Name" class="form-control" value="@Model.Last_Name" />
+
+    <label asp-for="Age" class="control-label">Age</label>
+    <input type="number" step="1.0" name="Age" class="form-control" value="@Model.Age" />
+
+    <input type="submit" value="Update Patient" class="btn btn-primary" />
+}

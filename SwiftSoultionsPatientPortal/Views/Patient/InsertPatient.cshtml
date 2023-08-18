@@ -1,0 +1,17 @@
+﻿@model Patient
+
+<h2>Create a New Patient</h2>
+
+@using (Html.BeginForm("InsertPatientToDatabase", "Patient", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="" />
+
+    <label asp-for="First_Name" class="control-label">First_Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+
+    <label asp-for="Age" class="control-label">Age</label>
+    <input type="number" step="1" name="Age" class="form-control" />
+
+    <input type="submit" value="Create PATIENT" class="btn btn-primary" />
+}
+

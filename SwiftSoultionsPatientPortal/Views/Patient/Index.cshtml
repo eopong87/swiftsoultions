@@ -1,0 +1,36 @@
+﻿@@model IEnumerable<Patient>
+
+    <h2>Patients</h2>
+    <div style="display: block">
+        <a href="/Patient/InsertPatient/">Create a New Patient</a>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Age</th>
+            <th>First Name</th>
+            <th>LastName</th>
+            <th>Address</th>
+            <th>Medication</th>
+            <th>Doseage</th>
+            <th>Doctor Seen</th>
+            <th>Doctors Notes</th>
+            <th>Last Visit Date</th>
+        </tr>
+
+        @foreach (var patient in @Model)
+        {
+            <tr>
+                <td>@patient.Age</td>
+                <td>@patient.FirstName</td>
+                <td>@patient.LastName</td>
+                <td>@patient.Address</td>
+                <td>@patient.Medication</td>
+                <td>@patient.Dosage</td>
+                <td>@patient.DoctorSeen</td>
+                <td>@patient.DoctorsNotes</td>
+                <td>@patient.LastVisitDate</td>
+                <td><a href=/Patient/ViewPatient/@patient.PatientID>@patient.PatientID</a></td>
+            </tr>
+        }
+
+    </table>
